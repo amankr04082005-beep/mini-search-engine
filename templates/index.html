@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Search Engine</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Mini Search Engine</h1>
+    <p class="sub">TF-IDF ranked search over an inverted index</p>
+  </header>
+
+  <main class="content">
+    <section class="search-box">
+      <input
+        type="text"
+        id="query"
+        placeholder="Search e.g. python, database, machine learning"
+        autofocus
+      />
+      <button id="search-btn">Search</button>
+    </section>
+
+    <p id="status" class="status"></p>
+    <ul id="results" class="results"></ul>
+
+    <section class="add-doc">
+      <h2>Add a document</h2>
+      <input type="text" id="doc-title" placeholder="Title" />
+      <textarea id="doc-content" rows="4" placeholder="Content"></textarea>
+      <button id="add-btn">Add document</button>
+      <p id="add-status" class="status"></p>
+    </section>
+
+    <section class="doc-list">
+      <h2>All documents (<span id="doc-count">0</span>)</h2>
+      <ul id="documents"></ul>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
